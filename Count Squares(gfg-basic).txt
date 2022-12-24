@@ -1,0 +1,52 @@
+Consider a sample space S consisting of all perfect squares starting from 1, 4, 9 and so on. You are given a number N, you have to output the number of integers less than N in the sample space S.
+
+Example 1:
+
+Input :
+N = 9
+Output:
+2
+Explanation:
+1 and 4 are the only Perfect Squares
+less than 9. So, the Output is 2.
+Example 2:
+
+Input :
+N = 3
+Output:
+1
+Explanation:
+1 is the only Perfect Square
+less than 3. So, the Output is 1.
+ 
+
+Your Task:
+You don't need to read input or print anything. Your task is to complete the function countSquares() which takes an Integer N as input and returns the answer.
+
+ 
+
+Expected Time Complexity: O(sqrt(N))
+Expected Auxiliary Space: O(1)
+
+ 
+
+Constraints:
+1 <= N <= 10^8
+                                                           //CODE
+
+       int countSquares(int N) {
+        // code here
+        //when you multiply an integer times itself it is known as a perfect square ,eg:4^2=16
+
+                //LOGIC - if N is perfect square of a number then return (sqrt(N)-1) and if N is not perfect square of any number then return sqrt(N) AS IT WILL GIVE NUMBER THE SQUARE ROOTS LESS THAN N
+   1.  int a = sqrt(N);
+    if(a*a==N) return (a-1);
+    else  return a;
+
+  2.  int count = 0 ;
+      for(int i = 1 ; i < sqrt(N) ; i++){
+        if((i*i)<N)
+        count++;
+       }
+      return count;
+      }
